@@ -47,12 +47,16 @@ async function dbConnect() {
         return;
     }
 
-    const db = await mongoose.connect(process.env.MONGODB_URI, {
+    const db = await mongoose.connect('mongodb+srv://Aduttya:iNmA33zkb7eMOkmP@cluster0.esdgm.mongodb.net/Testings?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
 
     connection.isConnected = db.connections[0].readyState;
+
+    mongoose.connection.on('error',err =>{
+        logError(err)
+    })
 }
 
 export default dbConnect;
