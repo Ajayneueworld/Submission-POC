@@ -52,12 +52,6 @@ const YourApp = () => {
   provider = new ethers.providers.Web3Provider(window.ethereum)
   signer = provider.getSigner()
     
-
-  const handleName = () => {
-    console.log("hii")
-  }
-
-  
   try{
     let addr = await signer.getAddress()
     setAddress(addr)
@@ -65,6 +59,7 @@ const YourApp = () => {
   }catch(err){
     console.log(err)}
   }
+  
   useEffect(() => {
     sign()
   },[])
