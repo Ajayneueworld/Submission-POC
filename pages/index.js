@@ -30,7 +30,6 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from "ethers";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect,useState } from 'react';
-import Form from 'react-bootstrap/Form';
 
 const Connect = () =>{
   return <ConnectButton/>
